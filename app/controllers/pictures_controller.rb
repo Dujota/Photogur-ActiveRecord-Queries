@@ -1,7 +1,9 @@
 class PicturesController < ApplicationController
 
-  def index # method from the model -- active record 
+  def index # method from the model -- active record
+    @pictures = Picture.all
     @most_recent_pictures = Picture.most_recent_five
+    @show_year = Picture.show_year
   end
 
   def show
@@ -48,5 +50,10 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
     @picture.destroy
     redirect_to "/pictures"
+  end
+
+  def old
+    @month_old = Picture.crearted_before(1.month.ago)
+    # @what_year_made = Picture.pictures_created_in_year
   end
 end

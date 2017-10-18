@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'pictures' => 'pictures#index'
 
+  get 'pictures/old' => 'pictures#old'
+
   # ADD NEW PICTURE ROUTE !!!!! NEED POST AND A GET
   post 'pictures' => 'pictures#create'
   get 'pictures/new' => 'pictures#new'

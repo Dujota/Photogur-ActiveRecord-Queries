@@ -8,8 +8,19 @@ class Picture < ApplicationRecord
     Picture.newest_first.limit(5)
   end
 
-  def self.crearted_before(time)
+  def self.created_before(time)
     Picture.where("created_at < ?", time)
   end
 
+  def self.pictures_created_in_year(year)
+    Picture.where("created_at LIKE ?", '%#{year}%').order(:id)
+  end
+
+  def self.show_year
+    Picture.all.map { |picture| picture.created_at.year }.uniq!
+
+    # alt using pluck
+    #Picture.uniq.pluck("strftime('%Y', created_at)")
+
+  end
 end

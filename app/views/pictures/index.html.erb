@@ -1,16 +1,19 @@
 <h1>There are <%= @pictures.length %> pictures in this collection</h1>
 
-<%= link_to("Add a Picture", "/pictures/new") %>
+<p>
+<%= link_to("Add a Picture", "/pictures/new") %> | <%= link_to("Pictures older than a Month", pictures_old_path) %>
+</p>
 
-<!-- <% @pictures.each do |picture| %>
-  <p><%= picture.title %>, <%= picture.artist %></p>
-
-  <%= link_to(image_tag(picture.url),  "/pictures/#{picture.id}") %>
-<% end %> -->
-
-<!-- Methods pulling from Active Record in the Picture model -->
 <ul>
-<%= @most_recent_pictures.each do |picture| %>
-  <li><%= picture.title %></li>
+<% @most_recent_pictures.each do |picture| %>
+  <li><%= picture.title %> <%= link_to(image_tag(picture.url),  "/pictures/#{picture.id}") %></li>
 <% end %>
 </ul>
+
+<% @show_year.each do |year| %>
+  <section>
+    <%= "#{year}" %>
+    <%= @pictures.pictures_created_in_year(year) %>
+
+  </section>
+<% end %>

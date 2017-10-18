@@ -1,0 +1,14 @@
+<h2> Pictures older than a month</h2>
+
+<p>
+  <%= link_to("Back", "/pictures") %>
+</p>
+
+<ul>
+  <% @month_old.each do |picture| %>
+    <li>
+      <%= picture.title %>
+      <%= link_to(image_tag(picture.url),  "/pictures/#{picture.id}") %>
+    </li>
+  <% end %>
+</ul>
