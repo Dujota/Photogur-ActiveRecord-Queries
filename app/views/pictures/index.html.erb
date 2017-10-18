@@ -2,8 +2,15 @@
 
 <%= link_to("Add a Picture", "/pictures/new") %>
 
-<% @pictures.each do |picture| %>
+<!-- <% @pictures.each do |picture| %>
   <p><%= picture.title %>, <%= picture.artist %></p>
 
   <%= link_to(image_tag(picture.url),  "/pictures/#{picture.id}") %>
+<% end %> -->
+
+<!-- Methods pulling from Active Record in the Picture model -->
+<ul>
+<%= @most_recent_pictures.each do |picture| %>
+  <li><%= picture.title %></li>
 <% end %>
+</ul>

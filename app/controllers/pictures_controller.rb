@@ -1,7 +1,7 @@
 class PicturesController < ApplicationController
 
-  def index
-    @pictures = Picture.all
+  def index # method from the model -- active record 
+    @most_recent_pictures = Picture.most_recent_five
   end
 
   def show
