@@ -20,7 +20,7 @@
   <h1>Check out our Collection by Year</h1>
 <% @show_year.each do |year| %>
   <p>
-    <%= link_to("#{year}", pictures_year_path) %>
+    <%= link_to("#{year}", year_path(year)) %>
   </p>
 <% end %>
 </section>

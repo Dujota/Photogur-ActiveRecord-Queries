@@ -12,15 +12,15 @@ class Picture < ApplicationRecord
     Picture.where("created_at < ?", time)
   end
 
-  def self.pictures_created_in_year(year)
-    Picture.where("created_at LIKE ?", '%#{year}%').order(:id)
+  def self.pictures_created_in_year(_year)
+    Picture.where("created_at LIKE ?", '%#{ year }%')
   end
 
   def self.show_year
     Picture.all.map { |picture| picture.created_at.year }.uniq!
 
     # alt using pluck
-    #Picture.uniq.pluck("strftime('%Y', created_at)")
+    # Picture.uniq.pluck("strftime('%Y', created_at)")
 
   end
 end

@@ -3,7 +3,7 @@ class PicturesController < ApplicationController
   def index # method from the model -- active record
     @pictures = Picture.all
     @most_recent_pictures = Picture.most_recent_five
-    #method defined @ bottom
+    # method defined @ bottom
     @show_year = Picture.show_year
   end
 
@@ -22,11 +22,11 @@ class PicturesController < ApplicationController
     @picture.url = params[:picture][:url]
 
     if @picture.save
-    # if the picture gets saved, generate a get request to "/pictures" (the index)
-     redirect_to "/pictures"
-   else
-     # otherwise render new.html.erb
-     render :new
+      # if the picture gets saved, generate a get request to "/pictures" (the index)
+      redirect_to "/pictures"
+    else
+      # otherwise render new.html.erb
+      render :new
     end
   end
 
@@ -59,6 +59,6 @@ class PicturesController < ApplicationController
   end
 
   def year
-    @pictures = Picture.pictures_created_in_year(params[:id])
+    @pictures = Picture.pictures_created_in_year(params[:year])
   end
 end
