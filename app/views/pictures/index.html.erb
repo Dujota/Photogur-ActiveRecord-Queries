@@ -4,19 +4,23 @@
 <%= link_to("Add a Picture", "/pictures/new") %> | <%= link_to("Pictures older than a Month", pictures_old_path) %>
 </p>
 
+<section class="recent_pictures">
+  <h2>Most Recent Additions</h2>
 <ul>
 <% @most_recent_pictures.each do |picture| %>
   <li>
     <%= render 'show_picture', picture: picture %>
   </li>
 <% end %>
-
 </ul>
+</section>
 
+
+<section class="year_of_pictures">
+  <h1>Check out our Collection by Year</h1>
 <% @show_year.each do |year| %>
-  <section>
-    <%= "#{year}" %>
-    <%# @pictures.pictures_created_in_year(year) %>
-
-  </section>
+  <p>
+    <%= link_to("#{year}", pictures_year_path) %>
+  </p>
 <% end %>
+</section>

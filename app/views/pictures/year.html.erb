@@ -1,1 +1,13 @@
-<%= render 'show_picture', picture: @picture %>
+
+<h1><%= params[:id] %></h1>
+<%= link_to("Back to Pictures", pictures_url) %>
+
+<section class="picture_by_year">
+<ul>
+<% @pictures.each do |picture| %>
+  <li>
+    <%= render 'show_picture', picture: picture %>
+  </li>
+<% end %>
+</ul>
+</section>

@@ -59,6 +59,6 @@ class PicturesController < ApplicationController
   end
 
   def year
-    @pictures = Picture.created_in_year(params[:id])
+    @pictures = Picture.pictures_created_in_year(params[:id])
   end
 end

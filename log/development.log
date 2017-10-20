@@ -2922,3 +2922,246 @@ Processing by PicturesController#index as HTML
 Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/pictures/5" for ::1 at 2017-10-20 19:02:17 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  Rendered pictures/_show_picture.html.erb (0.4ms)
+  Rendered pictures/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pictures" for ::1 at 2017-10-20 19:02:51 -0400
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered pictures/_show_picture.html.erb (0.7ms)
+  Rendered pictures/_show_picture.html.erb (0.1ms)
+  Rendered pictures/_show_picture.html.erb (0.2ms)
+  Rendered pictures/_show_picture.html.erb (0.1ms)
+  Rendered pictures/_show_picture.html.erb (0.1ms)
+  Rendered pictures/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pictures/old" for ::1 at 2017-10-20 19:02:53 -0400
+Processing by PicturesController#old as HTML
+  Rendering pictures/old.html.erb within layouts/application
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE (created_at < '2017-09-20 23:02:53.546361')[0m
+  Rendered pictures/_show_picture.html.erb (0.5ms)
+  Rendered pictures/_show_picture.html.erb (0.1ms)
+  Rendered pictures/_show_picture.html.erb (0.1ms)
+  Rendered pictures/old.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pictures" for ::1 at 2017-10-20 19:07:52 -0400
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered pictures/_show_picture.html.erb (0.7ms)
+  Rendered pictures/_show_picture.html.erb (0.1ms)
+  Rendered pictures/_show_picture.html.erb (0.1ms)
+  Rendered pictures/_show_picture.html.erb (0.1ms)
+  Rendered pictures/_show_picture.html.erb (0.1ms)
+  Rendered pictures/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pictures/year" for ::1 at 2017-10-20 19:07:56 -0400
+Processing by PicturesController#year as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `created_in_year' for #<Class:0x007f9f60913348>
+Did you mean?  created_before):
+  
+app/controllers/pictures_controller.rb:62:in `year'
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (95.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__enis__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2870245213941317685_70161229481660 at /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (77.8ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (195.2ms)
+Started GET "/pictures/year" for ::1 at 2017-10-20 19:10:07 -0400
+Processing by PicturesController#year as HTML
+  Rendering pictures/year.html.erb within layouts/application
+  Rendered pictures/_show_picture.html.erb (3.6ms)
+  Rendered pictures/year.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <p>
+    2:   <%= picture.title %>, <%= picture.artist %>
+    3: </p>
+    4: 
+    5: <%= link_to(image_tag(picture.url), picture_path(picture.id)) %>
+  
+app/views/pictures/_show_picture.html.erb:2:in `_app_views_pictures__show_picture_html_erb___1218803605876194474_70161227550240'
+app/views/pictures/year.html.erb:1:in `_app_views_pictures_year_html_erb___790493326168255404_70161227662780'
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.6ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (104.1ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__enis__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2870245213941317685_70161249347580 at /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (81.7ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (191.6ms)
+Started GET "/pictures/year" for ::1 at 2017-10-20 19:12:15 -0400
+Processing by PicturesController#year as HTML
+  Rendering pictures/year.html.erb within layouts/application
+  Rendered pictures/_show_picture.html.erb (4.3ms)
+  Rendered pictures/year.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <p>
+    2:   <%= picture.title %>, <%= picture.artist %>
+    3: </p>
+    4: 
+    5: <%= link_to(image_tag(picture.url), picture_path(picture.id)) %>
+  
+app/views/pictures/_show_picture.html.erb:2:in `_app_views_pictures__show_picture_html_erb___1218803605876194474_70161184633000'
+app/views/pictures/year.html.erb:1:in `_app_views_pictures_year_html_erb___790493326168255404_70161184665440'
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.0ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (91.9ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__enis__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2870245213941317685_70161239912840 at /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (79.7ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (179.3ms)
+Started GET "/pictures/year" for ::1 at 2017-10-20 19:16:21 -0400
+Processing by PicturesController#year as HTML
+  Rendering pictures/year.html.erb within layouts/application
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE (created_at LIKE '%#{year}%') ORDER BY "pictures"."id" ASC[0m
+  Rendered pictures/_show_picture.html.erb (7.0ms)
+  Rendered pictures/year.html.erb within layouts/application (9.3ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<ActiveRecord::Relation []>):
+    1: <p>
+    2:   <%= picture.title %>, <%= picture.artist %>
+    3: </p>
+    4: 
+    5: <%= link_to(image_tag(picture.url), picture_path(picture.id)) %>
+  
+app/views/pictures/_show_picture.html.erb:2:in `_app_views_pictures__show_picture_html_erb___1218803605876194474_70161179790480'
+app/views/pictures/year.html.erb:5:in `_app_views_pictures_year_html_erb___790493326168255404_70161179826840'
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.5ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (95.0ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__enis__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2870245213941317685_70161199669720 at /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (79.6ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Denis/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (188.3ms)
+Started GET "/pictures/year" for ::1 at 2017-10-20 19:17:25 -0400
+Processing by PicturesController#year as HTML
+  Rendering pictures/year.html.erb within layouts/application
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE (created_at LIKE '%#{year}%') ORDER BY "pictures"."id" ASC[0m
+  Rendered pictures/year.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pictures/year" for ::1 at 2017-10-20 19:17:32 -0400
+Processing by PicturesController#year as HTML
+  Rendering pictures/year.html.erb within layouts/application
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE (created_at LIKE '%#{year}%') ORDER BY "pictures"."id" ASC[0m
+  Rendered pictures/year.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pictures/year" for ::1 at 2017-10-20 19:17:39 -0400
+Processing by PicturesController#year as HTML
+  Rendering pictures/year.html.erb within layouts/application
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE (created_at LIKE '%#{year}%') ORDER BY "pictures"."id" ASC[0m
+  Rendered pictures/year.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.2ms)
+
+

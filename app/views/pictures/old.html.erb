@@ -7,8 +7,7 @@
 <ul>
   <% @month_old.each do |picture| %>
     <li>
-      <%= picture.title %>
-      <%= link_to(image_tag(picture.url),  "/pictures/#{picture.id}") %>
+    <%= render 'show_picture', picture: picture %>
     </li>
   <% end %>
 </ul>
