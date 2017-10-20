@@ -3,6 +3,7 @@ class PicturesController < ApplicationController
   def index # method from the model -- active record
     @pictures = Picture.all
     @most_recent_pictures = Picture.most_recent_five
+    #method defined @ bottom
     @show_year = Picture.show_year
   end
 
@@ -53,7 +54,11 @@ class PicturesController < ApplicationController
   end
 
   def old
-    @month_old = Picture.crearted_before(1.month.ago)
+    @month_old = Picture.created_before(1.month.ago)
     # @what_year_made = Picture.pictures_created_in_year
+  end
+
+  def year
+    @pictures = Picture.created_in_year(params[:id])
   end
 end
