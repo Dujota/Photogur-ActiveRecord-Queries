@@ -6,14 +6,17 @@
 
 <ul>
 <% @most_recent_pictures.each do |picture| %>
-  <li><%= picture.title %> <%= link_to(image_tag(picture.url),  "/pictures/#{picture.id}") %></li>
+  <li>
+    <%= render 'show_picture', picture: picture %>
+  </li>
 <% end %>
+
 </ul>
 
 <% @show_year.each do |year| %>
   <section>
     <%= "#{year}" %>
-    <%= @pictures.pictures_created_in_year(year) %>
+    <%# @pictures.pictures_created_in_year(year) %>
 
   </section>
 <% end %>
