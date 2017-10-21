@@ -1,5 +1,7 @@
 <h1>Add a Picture</h1>
 
- <%= link_to("Back to Pictures", "/pictures") %>
+<%= render 'errors', picture: @picture %>
+
+<%= link_to("Back to Pictures", "/pictures") %>
 
 <%= render 'form', picture: @picture %>

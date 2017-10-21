@@ -1,6 +1,9 @@
 <h1>Edit Picture</h1>
 
+<%= render 'errors', picture: @picture %>
+
 <p>
   <%= link_to("Back", "/pictures/#{@picture.id}") %>
 </p>
+
 <%= render 'form', picture: @picture, url: pictures_path(@picture.id) %>

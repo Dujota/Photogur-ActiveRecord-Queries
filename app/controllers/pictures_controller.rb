@@ -21,7 +21,7 @@ class PicturesController < ApplicationController
     @picture.artist = params[:picture][:artist]
     @picture.url = params[:picture][:url]
 
-    if @picture.save!
+    if @picture.save
       # if the picture gets saved, generate a get request to "/pictures" (the index)
       redirect_to "/pictures"
     else
@@ -40,7 +40,7 @@ class PicturesController < ApplicationController
     @picture.artist = params[:picture][:artist]
     @picture.url = params[:picture][:url]
 
-    if @picture.save!
+    if @picture.save
       redirect_to "/pictures/#{@picture.id}"
     else
       render :edit
